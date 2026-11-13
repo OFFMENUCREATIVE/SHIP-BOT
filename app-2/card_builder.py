@@ -5,7 +5,7 @@ Renders the shipment summary as a real Lark interactive card instead of one
 long markdown blob:
 
     +--------------------------------------------------+
-    | 📦 HLT Shipment Tracker                          |
+    | 📦 Off Menu Shipment Tracker                          |
     |  🟢 12 delivered  🔵 41 in transit  ⚪ 12 …      |
     |  [ All ] [ Flagged ] [ In transit ] [ Not scanned]|
     |  [ Filter by client            v ]                |
@@ -727,7 +727,7 @@ def build_tracker_card(results, client="all", status="all", sheet_count=None):
                       "content": (" %s " % SEP).join(note_bits)}],
     })
 
-    header_title = "\U0001F4E6 HLT Shipment Tracker"
+    header_title = "\U0001F4E6 Off Menu Shipment Tracker"
     if client != "all":
         label = next((c for c in all_sections if slugify(c) == client), None)
         if label:
@@ -749,7 +749,7 @@ def plain_text_fallback(results):
     if not rows:
         return "All shipments delivered. Nothing to track."
     totals = counts(rows)
-    lines = ["HLT Shipment Tracker",
+    lines = ["Off Menu Shipment Tracker",
              "%d in transit, %d not scanned, %d flagged"
              % (totals[TRANSIT] + totals[ARRIVING], totals[UNSCANNED],
                 totals[FLAGGED])]
