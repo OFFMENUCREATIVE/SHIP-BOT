@@ -512,7 +512,7 @@ class LarkClient:
         card = {
             "config": {"wide_screen_mode": True},
             "header": {
-                "title": {"tag": "plain_text", "content": "HLT Shipment Update"},
+                "title": {"tag": "plain_text", "content": "Off Menu Shipment Update"},
                 "template": "blue",
             },
             "elements": [{"tag": "markdown", "content": text_content}],
@@ -848,7 +848,7 @@ class LarkClient:
             buckets.setdefault(section, []).append(r)
 
         NL = chr(10)
-        lines = ["**HLT Shipment Tracker**"]
+        lines = ["**Off Menu Shipment Tracker**"]
 
         def render_section(label, items):
             display = SECTION_DISPLAY.get(label, label.upper())
@@ -897,7 +897,7 @@ class LarkClient:
         current_month = MONTH_NAMES[now.month - 1]
 
         NL = chr(10)
-        lines = ["**HLT Shipment Alert**",
+        lines = ["**Off Menu Shipment Alert**",
                  NL + "The following shipments need attention:"]
 
         for a in alerts:
